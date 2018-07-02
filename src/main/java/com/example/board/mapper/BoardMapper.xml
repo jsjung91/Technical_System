@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace = "com.example.board.mapper.BoardMapper">
+	
+	<select id="boardCount" resultType="int">
+		select count(*) from board
+	</select>
+	
+	<select id="boardList" resultType="com.example.board.domain.BoardVo" parameterType="com.example.board.domain.BoardVo">
+  	 	select * from board
+		<trim prefix="where"  prefixOverrides="or|and">
+ 	   		<if test="subject!=null">
+ 	      		subject like "%"#{subject}"%" 
+ 	   		</if>
+ 	   		<if test="name!=null">
+ 	      		or name like "%"#{name}"%"
+ 	   		</if>
+ 		</trim>
+ 		order by idx desc
+ 	</select>
+	
+	<select id="boardView" resultType="com.example.board.domain.BoardVo" parameterType="int">
+		select * from board where idx = #{ idx }
+	</select>
+	
+	<insert id="boardInsert" parameterType="com.example.board.domain.BoardVo" useGeneratedKeys="true" keyProperty="idx">
+		insert into board values(
+				#{idx}, #{subject}, #{name}, #{content}, #{pwd}, now(), 0			
+				)
+	</insert>
+	
+	<!-- 파일 추가 -->
+	<insert id="fileInsert" parameterType="com.example.board.domain.FileVo">
+		insert into files values(
+				#{fno}, #{idx}, #{fileName}, #{fileOriName}, #{fileUrl}
+			)
+	</insert>
+	
+	<select id = "fileDetail" parameterType="int" resultType="com.example.board.domain.FileVo">
+		select * from files where idx = #{idx}
+	</select>
+	
+	<update id="hitPlus" parameterType="int">
+		update board set hit = hit + 1 where idx = #{ idx }
+	</update>
+	
+	<update id="boardUpdate" parameterType="com.example.board.domain.BoardVo">
+		update board set
+		<if test="subject != null">
+			subject = #{subject}
+		</if>
+		<if test="subject != null and content != null">,</if>
+		<if test="content != null">
+			content = #{content}
+		</if> 
+		where idx = #{idx}
+	</update>
+	
+	<delete id="boardDelete" parameterType="int">
+		delete from board where idx = #{idx}
+	</delete>
+	
+	
+	<!-- 기술 지원 테이블 -->
+	<select id="techList" resultType="com.example.board.domain.TechVo" parameterType="com.example.board.domain.BoardVo">
+  	 	select * from technic
+		 <trim prefix="where"  prefixOverrides="or|and">
+ 	   		<if test="subject!=null">
+ 	      		subject like "%"#{subject}"%" 
+ 	   		</if>
+ 	   		<if test="customer!=null">
+ 	      		or customer like "%"#{customer}"%"
+ 	   		</if>
+ 		</trim>
+ 		order by idx desc 
+ 	</select>
+	
+	<select id="techView" resultType="com.example.board.domain.TechVo" parameterType="int">
+		select * from technic where idx = #{ idx }
+	</select>
+	
+	<insert id="techInsert" parameterType="com.example.board.domain.TechVo" useGeneratedKeys="true" keyProperty="idx">
+		insert into technic values(
+				#{idx}, #{customer}, #{name}, #{support}, #{subject}, #{content}, #{pwd}, now(), #{status}			
+			)
+	</insert>
+	
+	<update id="techUpdate" parameterType="com.example.board.domain.TechVo">
+		update technic set
+		<if test="subject != null">
+			subject = #{subject}
+		</if>, customer = #{customer}, support = #{support}
+		<if test="subject != null and content != null">,</if>
+		<if test="content != null">
+			content = #{content}
+		</if> 
+		where idx = #{idx}
+	</update>
+	
+	<delete id="techDelete" parameterType="int">
+		delete from technic where idx = #{idx}
+	</delete>
+	
+	<!-- 기술 지원 테이블  -->
+	
+	
+	<!-- 로그인 테이블 -->
+	<select id="login_selectOne" parameterType="com.example.board.domain.MemberVo">
+		select * from member where id = #{id} AND pwd = #{pwd}
+	</select>
+	<!-- 로그인 테이블 -->
+</mapper>
