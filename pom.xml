@@ -41,11 +41,11 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- JSP -->
-        <!--<dependency>
+        <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <version>8.0.36</version>
-        </dependency> -->
+        </dependency> 
                 
         <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
