@@ -19,7 +19,9 @@ body {
 	scrollbar-track-color: #EEEEEE;
 }  
 
-form 		{margin:0;}
+form 		{margin:0;
+}
+
 img			{border:0;}
 
 .b	{	font-weight:bold;}

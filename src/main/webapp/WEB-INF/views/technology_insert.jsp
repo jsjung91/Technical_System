@@ -8,6 +8,24 @@
 <meta http-equiv="Content-Type" content="text/html;">
 <link rel="stylesheet" href="/boardboot/css/style.css" type="text/css">
 <title>게시글 작성</title>
+<!-- Bootstrap core CSS -->
+<link href="/boardboot/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link
+	href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
+<link href="/boardboot/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href="/boardboot/vendor/devicons/css/devicons.min.css" rel="stylesheet">
+<link href="/boardboot/vendor/simple-line-icons/css/simple-line-icons.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/boardboot/css/resume.min.css" rel="stylesheet">
 </head>
 <script>
 	function insert() {
@@ -51,19 +69,19 @@
 
 	}
 </script>
-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<body style="margin-top:150px; margin-left:40px;">
 	<table width="760" align="center">
 		<tr>
 			<td>
 				<table width="690" height="50" border="0" cellpadding="0"
 					cellspacing="0">
 					<tr>
-						<td><img src="/boardboot/img/tech_title.png"></td>
+						<td><img src="/boardboot/img/tech_title.png">등록</td>
 					</tr>
 				</table>
 			</td>
-		</tr>
-		<tr>
+		</tr>  
+		<tr> 
 			<td>
 				<form name="f" method="post" action="/boardboot/tech/insertProc" enctype="multipart/form-data">
 					<table width="750" border="0" cellspacing="0" cellpadding="0">
@@ -143,7 +161,7 @@
 							<br> <img src="/boardboot/img/btn_reg.gif"
 								onClick='insert();' style="cursor: pointer"> 
 								<img src="/boardboot/img/btn_back.gif"
-								onClick="location.href='/boardboot/tech/technology_list'"
+								onClick="location.href='/boardboot/tech/tech_list?contentPage=technology_list.jsp'"
 								style="cursor: pointer"></td>
 						</tr>
 					</table>

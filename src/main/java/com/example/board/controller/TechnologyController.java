@@ -35,7 +35,7 @@ public class TechnologyController {
 	public String techList(HttpServletRequest request, String search, String search_text, Model model) throws Exception{
 		
 		TechVo vo = new TechVo();
-
+		
 		if(search!=null && !search.equals("all")) {
 			if(search.equals("subject")) {
 				vo.setSubject(request.getParameter("search_text"));
@@ -48,22 +48,22 @@ public class TechnologyController {
 		
 		model.addAttribute("tech_list", list);
 		
-		return "technology_list";
+		return "main";
 		
 	}
 	
 	@RequestMapping("/view/{idx}")
 	private String techView(@PathVariable int idx, Model model) throws Exception{
-		
+
 		model.addAttribute("vo", techService.techViewService(idx));
 		model.addAttribute("files", techService.fileDetailService(idx)); 
 		
-		return "technology_view";
+		return "main";
 	}
 	
 	@RequestMapping("/insert")
 	private String techInsertForm() {
-		return "technology_insert";
+		return "main";
 	}
 	
 	@RequestMapping("/insertProc")
@@ -81,7 +81,7 @@ public class TechnologyController {
 		
 		if(files.isEmpty()){ //업로드할 파일이 업을 경우
 			techService.techInsertService(vo); //게시글 insert
-		}else{ 
+		}else{  
 			// 스프링 부트에서 Multipart 요청을 처리하려면 multipartConfingElement, multipartResolver 빈이 애플리케이션 컨텍스트에 존재해야 하는데 애플리케이션 시작 시
 			// MultipartAutoConfiguration 클래스가 이 작업을 수동으로 수행해준다.
 			String fileName = files.getOriginalFilename();
@@ -109,8 +109,8 @@ public class TechnologyController {
 		techService.fileInsertService(file); // file insert
 		
 		}
-		
-		return "redirect:/tech/tech_list";
+	
+		return "redirect:/tech/tech_list?contentPage=technology_list.jsp";
 	}
 	
 	@RequestMapping("/update/{idx}")

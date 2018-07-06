@@ -34,7 +34,7 @@ public class BoardController {
 	@RequestMapping("/main")
 	public String mainPage() throws Exception{
 		
-		return "main";
+		return "/main";
 	}
 	
 	@RequestMapping("/list") // 게시판 리스트 화면

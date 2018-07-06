@@ -8,6 +8,25 @@
 <meta http-equiv="Content-Type" content="text/html;">
 <link rel="stylesheet" type="text/css" href="/boardboot/css/style.css">
 <link rel="stylesheet" type="text/css" href="/boardboot/css/test.css">
+<!-- Bootstrap core CSS -->
+<link href="/boardboot/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link
+	href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
+<link href="/boardboot/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href="/boardboot/vendor/devicons/css/devicons.min.css" rel="stylesheet">
+<link href="/boardboot/vendor/simple-line-icons/css/simple-line-icons.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/boardboot/css/resume.min.css" rel="stylesheet">
+
 <title>게시글 목록</title>
 </head>
 <script type="text/javascript">
@@ -37,7 +56,7 @@ window.onload = function() {
 }; */
 </script>
 
-<body>
+<body style="margin-top:100px">
 	<table width="700" align="center">
 		<tr>
 			<td>
@@ -78,7 +97,7 @@ window.onload = function() {
 										<td class="td_b_1 left">
 											<!-- 댓글--> 
 											<a
-											href="/boardboot/tech/view/${ vo.idx }"
+											href="/boardboot/tech/view/${ vo.idx }?contentPage=technology_view.jsp"
 											style="text-decoration: none; margin-left:50px; text-decoration: none; color: red;"
 											class="num"> ${ vo.subject } </a>
 										</td>
@@ -140,7 +159,7 @@ window.onload = function() {
 					<tr>
 						<td>
 							<!-- 등록 버튼 이미지 --> 
-							<img src="/boardboot/img/btn_reg.gif" onClick="location.href='/boardboot/tech/insert'" style="cursor:pointer">
+							<img src="/boardboot/img/btn_reg.gif" onClick="location.href='/boardboot/tech/insert?contentPage=technology_insert.jsp'" style="cursor:pointer">
 							<img src="/boardboot/img/btn_back.gif" onClick="location.href='/boardboot/board/main'"
 								style="cursor: pointer">
 						</td>

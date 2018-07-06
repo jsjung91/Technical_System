@@ -49,7 +49,7 @@ function modi(){
 	
 	location.href = "/boardboot/board/update/${vo.idx}";
 		
-}
+} 
 </script>
 
 <body>

@@ -9,6 +9,25 @@
 <meta http-equiv="Content-Type" content="text/html;">
 <link rel="stylesheet" href="/boardboot/css/style.css" type="text/css">
 <title>게시글 상세</title>
+<!-- Bootstrap core CSS -->
+<link href="/boardboot/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link
+	href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+	rel="stylesheet">
+<link href="/boardboot/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href="/boardboot/vendor/devicons/css/devicons.min.css" rel="stylesheet">
+<link href="/boardboot/vendor/simple-line-icons/css/simple-line-icons.css"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/boardboot/css/resume.min.css" rel="stylesheet">
+
 </head>
 <script>
 function del(){
@@ -52,12 +71,17 @@ function modi(){
 }
 </script>
 
-<body>
-<table width="690" height="50" border="0" cellpadding="0" cellspacing="0">
-		<tr>
-			<td><img src="/boardboot/img/title_04.gif"></td>
-		</tr>
-	</table>
+<body style="margin-top:150px; margin-left:500px;">
+<table width="700">
+	<tr>
+		<td>
+			<table width="690" height="50" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td><img src="/boardboot/img/title_04.gif"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
 	<form name="f" method="post">
 		<table width="690" border="0" cellspacing="0" cellpadding="0">
 			<tr>
@@ -110,11 +134,12 @@ function modi(){
 					onClick="location.href='/list/page=${ param.page }&search=${ param.search}&search_text=${ param.search_text}'"
 					style="cursor: hand"> --%>
 					
-					<img src="/boardboot/img/btn_modify.gif" onClick='modi();' style="cursor:pointer"> 
+					<img src='/boardboot/img/btn_modify.gif' onClick='modi();' style='cursor:pointer'> 
 					<img src='/boardboot/img/btn_delete.gif' onClick='del();' style='cursor: pointer'>
-					<img src='/boardboot/img/btn_back.gif' onClick='location.href="/boardboot/tech/list"' style="cursor:pointer"></td>
+					<img src='/boardboot/img/btn_back.gif' onClick='location.href="/boardboot/tech/tech_list?contentPage=technology_list.jsp"' style='cursor:pointer'></td>
 			</tr>
 		</table>
-	</form>          	   
+	</form>   
+	</table>       	   
 </body>
 </html>
