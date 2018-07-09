@@ -48,7 +48,7 @@ public class TechnologyController {
 		
 		model.addAttribute("tech_list", list);
 		
-		return "main";
+		return "technology_list";
 		
 	}
 	

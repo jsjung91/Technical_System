@@ -49,8 +49,10 @@
 		<ul class="navbar-nav">
 		<li class="nav-item"><a class="nav-link js-scroll-trigger"
 				href="/boardboot/board/main">HOME</a></li>
-			<li class="nav-item"><a class="nav-link js-scroll-trigger"
-				href="/boardboot/tech/tech_list?contentPage=technology_list.jsp">IT Request</a></li>
+			<!-- <li class="nav-item"><a class="nav-link js-scroll-trigger"
+				href="/boardboot/tech/tech_list?contentPage=technology_list.jsp">IT Request</a></li> -->
+				<li class="nav-item"><a class="nav-link js-scroll-trigger"
+				href="/boardboot/tech/tech_list">IT Request</a></li>
 			<li class="nav-item"><a class="nav-link js-scroll-trigger"
 				href="/boardboot/tech/tech_list?contentPage=technology_list.jsp">Request List</a></li>
 			<li class="nav-item"><a class="nav-link js-scroll-trigger"
